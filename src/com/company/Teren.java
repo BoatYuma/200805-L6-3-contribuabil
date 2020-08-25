@@ -13,4 +13,13 @@ public class Teren extends Proprietati {
     public int getRang() {
         return rang;
     }
+
+    public String toString() {
+        String mesaj;
+        mesaj = "Contribuabil: " + this.nume + "\n \n";
+        for (Proprietati p : proprietati) {
+            mesaj = mesaj + "Teren: Strada " + p.getStrada() + " nr " + p.getNumar() + "\n Suprafata: " + p.getSuprafata() + ", Rang: " + ((Teren) p).getRang() + "\n Cost:" + ((350 * p.getSuprafata()) / ((Teren) p).getRang()) + "\n";
+        }
+        return mesaj;
+    }
 }
