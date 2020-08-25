@@ -7,11 +7,6 @@ public class Cladire extends Proprietati {
         super.setSuprafata(suprafata);
     }
     public String toString() {
-        String mesaj;
-        mesaj = "Contribuabil: " + contribuabil.getNume() + "\n \n";
-        for (Proprietati p : contribuabil.getProprietati()) {
-            mesaj = mesaj + "Cladire: Strada " + p.getStrada() + " nr " + p.getNumar() + "\n Suprafata: " + p.getSuprafata() + "\n Cost:" + (500 * p.getSuprafata()) + "\n";
-        }
-        return mesaj;
+        return "Cladire: Strada " + super.getStrada() + " nr " + super.getNumar() + "\n Suprafata: " + super.getSuprafata() + "\n Cost:" + (500 * super.getSuprafata()) + "\n";
     }
 }

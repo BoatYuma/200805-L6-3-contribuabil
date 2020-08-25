@@ -3,7 +3,7 @@ package com.company;
 public class Contribuabil {
     private String nume;
     private String cnp;
-    private Proprietati[] proprietati = new Proprietati[10];
+    private final Proprietati[] proprietati;
 
     public Contribuabil(String nume, String cnp, Proprietati[] proprietati) {
         this.nume = nume;
@@ -18,4 +18,14 @@ public class Contribuabil {
     public Proprietati[] getProprietati() {
         return proprietati;
     }
+
+    public String toString() {
+        String mesaj = "Contribuabil: " + this.getNume() + "\n \n";
+        for (Proprietati p : proprietati) {
+            if(p!=null)
+            mesaj=mesaj+p.toString();
+        }
+    return mesaj;
+    }
+
 }

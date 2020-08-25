@@ -1,7 +1,7 @@
 package com.company;
 
 public class Teren extends Proprietati {
-    private int rang;
+    private final int rang;
 
     public Teren(String strada, int numar, int suprafata, int rang) {
         super.setStrada(strada);
@@ -15,11 +15,6 @@ public class Teren extends Proprietati {
     }
 
     public String toString() {
-        String mesaj;
-        mesaj = "Contribuabil: " + super.getNume() + "\n \n";
-        for (Proprietati p : .getProprietati()) {
-            mesaj = mesaj + "Teren: Strada " + p.getStrada() + " nr " + p.getNumar() + "\n Suprafata: " + p.getSuprafata() + ", Rang: " + ((Teren) p).getRang() + "\n Cost:" + ((350 * p.getSuprafata()) / ((Teren) p).getRang()) + "\n";
-        }
-        return mesaj;
+        return "Teren: Strada " + super.getStrada() + " nr " + super.getNumar() + "\n Suprafata: " + super.getSuprafata() + ", Rang: " + this.getRang() + "\n Cost:" + ((350 * super.getSuprafata()) / this.getRang()) + "\n";
     }
 }
