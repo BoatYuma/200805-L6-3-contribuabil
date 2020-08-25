@@ -1,9 +1,9 @@
 package com.company;
 
 public class Contribuabil {
-    String nume;
-    String cnp;
-    Proprietati[] proprietati=new Proprietati[10];
+    private String nume;
+    private String cnp;
+    private Proprietati[] proprietati = new Proprietati[10];
 
     public Contribuabil(String nume, String cnp, Proprietati[] proprietati) {
         this.nume = nume;
@@ -11,15 +11,14 @@ public class Contribuabil {
         this.proprietati = proprietati;
     }
 
-    public String toString(){
+    public String toString() {
         String mesaj;
-        mesaj = "Contribuabil: "+this.nume+"\n \n";
-        for (Proprietati p: proprietati) {
-            if (p instanceof Cladire){
-                mesaj=mesaj+"Cladire: Strada "+p.strada+" nr "+p.numar+"\n Suprafata: "+p.suprafata+"\n Cost:"+ (500*p.suprafata)+"\n";
-            }
-            else if (p instanceof Teren){
-                mesaj=mesaj+"Teren: Strada "+p.strada+" nr "+p.numar+"\n Suprafata: "+p.suprafata+", Rang: "+((Teren) p).rang+"\n Cost:"+ ((350*p.suprafata)/((Teren)p).rang)+"\n";
+        mesaj = "Contribuabil: " + this.nume + "\n \n";
+        for (Proprietati p : proprietati) {
+            if (p instanceof Cladire) {
+                mesaj = mesaj + "Cladire: Strada " + p.getStrada() + " nr " + p.getNumar() + "\n Suprafata: " + p.getSuprafata() + "\n Cost:" + (500 * p.getSuprafata()) + "\n";
+            } else if (p instanceof Teren) {
+                mesaj = mesaj + "Teren: Strada " + p.getStrada() + " nr " + p.getNumar() + "\n Suprafata: " + p.getSuprafata() + ", Rang: " + ((Teren) p).getRang() + "\n Cost:" + ((350 * p.getSuprafata()) / ((Teren) p).getRang()) + "\n";
             }
 
         }
