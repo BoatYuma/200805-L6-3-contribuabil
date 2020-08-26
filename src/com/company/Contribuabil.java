@@ -1,9 +1,9 @@
 package com.company;
 
 public class Contribuabil {
-    String nume;
-    String cnp;
-    Proprietati[] proprietati=new Proprietati[10];
+    private String nume;
+    private String cnp;
+    private final Proprietati[] proprietati;
 
     public Contribuabil(String nume, String cnp, Proprietati[] proprietati) {
         this.nume = nume;
@@ -11,18 +11,23 @@ public class Contribuabil {
         this.proprietati = proprietati;
     }
 
-    public String toString(){
-        String mesaj;
-        mesaj = "Contribuabil: "+this.nume+"\n \n";
-        for (Proprietati p: proprietati) {
-            if (p instanceof Cladire){
-                mesaj=mesaj+"Cladire: Strada "+p.strada+" nr "+p.numar+"\n Suprafata: "+p.suprafata+"\n Cost:"+ (500*p.suprafata)+"\n";
-            }
-            else if (p instanceof Teren){
-                mesaj=mesaj+"Teren: Strada "+p.strada+" nr "+p.numar+"\n Suprafata: "+p.suprafata+", Rang: "+((Teren) p).rang+"\n Cost:"+ ((350*p.suprafata)/((Teren)p).rang)+"\n";
-            }
+    public String getNume() {
+        return nume;
+    }
 
+    public Proprietati[] getProprietati() {
+        return proprietati;
+    }
+
+    public String toString() {
+        int suma = 0;
+        String mesaj = "Contribuabil: " + this.getNume() + "\n \n";
+        for (Proprietati proprietate : proprietati) {
+            if (proprietate != null) {
+                mesaj = mesaj + proprietate.toString();
+                suma = suma + proprietate.getSuma();
+            }
         }
-        return mesaj;
+        return mesaj + "\n Suma:" + suma;
     }
 }
