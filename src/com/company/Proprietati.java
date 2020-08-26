@@ -28,4 +28,8 @@ public class Proprietati {
     public void setSuprafata(int suprafata) {
         this.suprafata = suprafata;
     }
+
+    public int getSuma() {
+        return 0;
+    }
 }

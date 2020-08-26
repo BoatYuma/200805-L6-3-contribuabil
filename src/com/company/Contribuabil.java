@@ -20,12 +20,14 @@ public class Contribuabil {
     }
 
     public String toString() {
+        int suma = 0;
         String mesaj = "Contribuabil: " + this.getNume() + "\n \n";
-        for (Proprietati p : proprietati) {
-            if(p!=null)
-            mesaj=mesaj+p.toString();
+        for (Proprietati proprietate : proprietati) {
+            if (proprietate != null) {
+                mesaj = mesaj + proprietate.toString();
+                suma = suma + proprietate.getSuma();
+            }
         }
-    return mesaj;
+        return mesaj + "\n Suma:" + suma;
     }
-
 }

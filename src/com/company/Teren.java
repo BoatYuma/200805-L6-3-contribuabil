@@ -17,4 +17,8 @@ public class Teren extends Proprietati {
     public String toString() {
         return "Teren: Strada " + super.getStrada() + " nr " + super.getNumar() + "\n Suprafata: " + super.getSuprafata() + ", Rang: " + this.getRang() + "\n Cost:" + ((350 * super.getSuprafata()) / this.getRang()) + "\n";
     }
+
+    public int getSuma() {
+        return ((350 * super.getSuprafata()) / this.getRang());
+    }
 }
